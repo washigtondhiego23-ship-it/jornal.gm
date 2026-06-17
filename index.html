@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jornal eli</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #750202;
+    color: #333;
+}
+
+/* Barra do topo - Identidade Visual */
+header {
+    background-color: #000000;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.logo-g1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+.imagem-logo {
+    height: 65px; 
+    width: auto;  
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.regiao {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* Container Principal das Notícias */
+.container-portal {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .container-portal {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Box Padrão de Matéria */
+.item-noticia {
+    background: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.item-noticia a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.item-noticia img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Textos Sobrepostos (Estilo G1) */
+.info-sobreposta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    color: white;
+    padding: 20px;
+}
+
+/* Manchete Principal (Esquerda) */
+.manchete-principal {
+    height: 480px;
+}
+
+.manchete-principal img {
+    height: 100%;
+}
+
+.manchete-principal h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+/* Bloco Lateral (Direita) */
+.coluna-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.noticia-lateral {
+    height: 230px;
+}
+
+.noticia-lateral img {
+    height: 100%;
+}
+
+.noticia-lateral h3 {
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.tag-noticia {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.data-noticia {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 5px;
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="bloco-logo">
+
+        <img src= "https://i.ibb.co/5W3DzTd3/Whats-App-Image-2026-06-16-at-22-41-53.jpg" "  alt="Logo Jornal GM" class="imagem-logo">
+
+    </div>
+
+    <div class="regiao">JORNAL GM</div>
+
+    <div></div>
+
+</header>
+
+<main class="container-portal">
+
+    <article class="item-noticia manchete-principal">
+        <a href="https://i.ibb.co/1t34zrM0/Captura-de-tela-2026-06-16-203844.png" target="_blank">
+            <img src="https://i.ibb.co/1t34zrM0/Captura-de-tela-2026-06-16-203844.png" alt="Fauna Tocantins">
+            <div class="info-sobreposta">
+                <h2>alunos realizam a aprova brasil de matematica</h2>
+                <span class="data-noticia">16/06/2026</span>
+            </div>
+        </a>
+    </article>
+
+    <div class="coluna-lateral">
+
+        <article class="item-noticia noticia-lateral">
+            <a href="https://imgbb.com/" target="_blank">
+                <img src="https://i.ibb.co/5hDNK5HX/Captura-de-tela-2026-06-16-212049.png" alt="Estudantes na Agrotins">
+                <div class="info-sobreposta">
+                    <span class="tag-noticia">Educação e Campo</span>
+                    <h3 style ="color: rgb(255, 255, 255);">Alunos realizam visita pedagógica para conhecer inovações tecnológicas na Agrotins</h3>
+                    <span class="data-noticia">12/05/2026</span>
+                </div>
+            </a>
+        </article>
+
+        <article class="item-noticia noticia-lateral">
+            <a href="https://imgbb.com/" target="_blank">
+                <img src="https://i.ibb.co/B2mHtD1n/Captura-de-tela-2026-06-16-211802.png" alt="Dia do Literart">
+                <div class="info-sobreposta">
+                    <span class="tag-noticia">Cultura Escolar</span>
+                    <h3>Dia do Literart: Escola promove evento focado em expressões artísticas e produções literárias</h3>
+                    <span class="data-noticia">22/05/2026</span>
+                </div>
+            </a>
+        </article>
+
+    </div>
+
+</main>
+
+</body>
+</html>
