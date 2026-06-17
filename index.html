@@ -22,6 +22,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #660701;
     color: #333;
+
 }
 
 /* Barra do topo - Identidade Visual */
@@ -33,7 +34,9 @@ header {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    
 }
+
 
 .logo-g1 {
     font-size: 40px;
@@ -45,6 +48,7 @@ header {
     object-fit: contain;
     border-radius: 4px;
 }
+
 
 .regiao {
     font-size: 20px;
@@ -151,6 +155,70 @@ header {
     margin-top: 5px;
     display: block;
 }
+/* MENU */
+.menu {
+    background: #111;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #ffd700;
+}
+
+.menu-toggle {
+    display: none;
+    width: 100%;
+    background: #111;
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+
+    .menu ul.ativo {
+        display: flex;
+    }
+
+    .menu li {
+        border-top: 1px solid #333;
+    }
+
+    .menu ul li a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -168,6 +236,20 @@ header {
     <div></div>
 
 </header>
+</header>
+
+<nav class="menu">
+    <button class="menu-toggle" onclick="abrirMenu()">☰</button>
+
+    <ul id="menuLista">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Esportes</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="#">Entrevistas</a></li>
+    </ul>
+</nav>
+
+<main class="container-portal">
 
 <main class="container-portal">
 
@@ -208,7 +290,11 @@ header {
     </div>
 
 </main>
-
+<script>
+function abrirMenu() {
+    document.getElementById("menuLista").classList.toggle("ativo");
+}
+</script>
 </body>
 </html>
 
