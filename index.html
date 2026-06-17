@@ -46,87 +46,71 @@ header {
 
 /* Container Principal das Notícias */
 .container-portal {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 20px auto;
     padding: 0 15px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    grid-template-columns: 3fr 1.2fr;
+    gap: 15px;
 }
 
+/* Notícia Principal */
+.manchete-principal {
+    height: 550px;
+}
+
+.manchete-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.manchete-principal h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+/* Coluna lateral */
+.coluna-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Notícias pequenas */
+.noticia-lateral {
+    height: 267px;
+}
+
+.noticia-lateral img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.noticia-lateral h3 {
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+/* Responsivo para celular */
 @media (max-width: 768px) {
     .container-portal {
         grid-template-columns: 1fr;
     }
-}
 
-/* Box Padrão de Matéria */
-.item-noticia {
-    background: #ffffff;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
+    .manchete-principal {
+        height: 350px;
+    }
 
-.item-noticia a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
+    .manchete-principal h2 {
+        font-size: 28px;
+    }
 
-.item-noticia img {
-    width: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Textos Sobrepostos (Estilo G1) */
-.info-sobreposta {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-    color: white;
-    padding: 20px;
-}
-
-/* Manchete Principal (Esquerda) */
-.manchete-principal {
-    height: 480px;
-}
-
-.manchete-principal img {
-    height: 100%;
-}
-
-.manchete-principal h2 {
-    font-size: 28px;
-    line-height: 1.2;
-    font-weight: bold;
-}
-
-/* Bloco Lateral (Direita) */
-.coluna-lateral {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.noticia-lateral {
-    height: 230px;
-}
-
-.noticia-lateral img {
-    height: 100%;
-}
-
-.noticia-lateral h3 {
-    font-size: 16px;
-    line-height: 1.3;
-    font-weight: bold;
+    .noticia-lateral {
+        height: 220px;
+    }
 }
 
 .tag-noticia {
