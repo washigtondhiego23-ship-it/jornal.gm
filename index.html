@@ -158,60 +158,27 @@ header {
 /* MENU */
 .menu {
     background: #111;
+    position: relative;
 }
 
-.menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-}
-
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.menu ul li a:hover {
-    color: #ffd700;
-}
-
-.menu-toggle {
-    display: none;
-    width: 100%;
-    background: #111;
-    color: white;
-    border: none;
-    font-size: 28px;
-    padding: 12px;
-    cursor: pointer;
-}
-
-/* RESPONSIVO */
 @media (max-width: 768px) {
-@media (max-width: 768px) {
-
-    .menu {
-        position: relative;
-    }
 
     .menu-toggle {
         display: block;
-        margin: 0 auto;
+        margin-left: auto;
+        padding: 10px 15px;
+        font-size: 30px;
     }
 
     .menu ul {
         display: none;
-        flex-direction: column;
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
+        left: 0;          /* começa na esquerda */
+        width: 100%;      /* ocupa toda a largura */
         background: #111;
-        z-index: 1000;
+        flex-direction: column;
+        z-index: 9999;
     }
 
     .menu ul.ativo {
@@ -219,16 +186,18 @@ header {
     }
 
     .menu li {
+        width: 100%;
         border-top: 1px solid #333;
     }
 
-    .menu ul li a {
+    .menu li a {
         display: block;
-        padding: 15px;
+        width: 100%;
         text-align: center;
+        padding: 18px;
     }
 }
-}
+
 
 </style>
 </head>
