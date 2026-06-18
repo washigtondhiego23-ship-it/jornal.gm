@@ -79,6 +79,12 @@ header {
     position: relative;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.item-noticia:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
 
 .item-noticia a {
@@ -158,18 +164,20 @@ header {
 /* MENU */
 .menu {
     position: relative;
-    min-width: 220px;
-    align-self: flex-start;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 .menu ul {
     list-style: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    width: max-content;
+    right: 0;
     min-width: 220px;
-    background: #111;
+    width: max-content;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
 
     max-height: 0;
     overflow: hidden;
@@ -204,35 +212,52 @@ header {
     border: none;
     font-size: 35px;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 0;
 }
 /*celular*/
 @media(max-width:768px){
     header {
         flex-wrap: wrap;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
         gap: 12px;
     }
+    .bloco-logo img {
+        max-width: 90px;
+    }
+    .regiao {
+        flex: 1 1 auto;
+        min-width: 0;
+        text-align: left;
+    }
     .menu{
-        width: 100%;
-        order: 3;
-        align-self: flex-start;
+        width: auto;
+        order: 2;
+        align-self: center;
     }
     .menu-toggle{
-        width: 100%;
+        width: auto;
         text-align: left;
-        margin-right: 0;
         padding: 12px 0;
     }
     .menu ul {
-        position: static;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        background: #111;
+    }
+    .menu ul.ativo {
+        max-height: 300px;
+    }
+    .menu li {
+        border-top: 1px solid #333;
         width: 100%;
     }
     .menu li a {
         text-align: left;
         white-space: normal;
-        padding-left: 18px;
+        padding: 10px 18px;
     }
     .menu a{
         font-size: 18px;
@@ -255,8 +280,6 @@ header {
     </div>
 
     <div class="regiao">JORNAL GM</div>
-
-    <div></div>
 
 <nav class="menu">
     <button class="menu-toggle" onclick="abrirMenu()">☰</button>
