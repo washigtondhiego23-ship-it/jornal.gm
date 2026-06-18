@@ -157,52 +157,90 @@ header {
 }
 /* MENU */
 .menu {
-    background:transparent;
     position: relative;
+    min-width: 220px;
+    align-self: flex-start;
 }
 
-@media (max-width: 768px) {
+.menu ul {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    min-width: 220px;
+    background: #111;
 
-    .menu-toggle {
-        display: block;
-        margin-left: auto;
-        padding: 10px 15px;
-        font-size: 30px;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.4s ease;
+    z-index: 999;
+}
+
+.menu ul.ativo {
+    max-height: 300px;
+    width: auto;
+}
+
+.menu li {
+    border-top: 1px solid #333;
+    width:100%;
+}
+
+.menu li a {
+    display: block;
+    padding: 18px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    white-space: normal;
+}
+
+.menu-toggle {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+/*celular*/
+@media(max-width:768px){
+    header {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
     }
-
+    .menu{
+        width: 100%;
+        order: 3;
+        align-self: flex-start;
+    }
+    .menu-toggle{
+        width: 100%;
+        text-align: left;
+        margin-right: 0;
+        padding: 12px 0;
+    }
     .menu ul {
-        list-style: none;
-        position: absolute;
-        top: -400%;
-        left: 0;          /* começa na esquerda */
-        width: 100%;      /* ocupa toda a largura */
-        background: #111;
-        transition:0.4s ease;
-        z-index: 999;
+        position: static;
+        width: 100%;
     }
-
-    .menu ul.ativo {
-        top:100%
-    }
-
-    .menu li {
-        
-        border-top: 1px solid #333;
-    }
-
     .menu li a {
-        display: block;
-        padding:18px;
-        color:#ccc;
-        text-decoration:none
-        text-align center;
-        font-weight:bold;
+        text-align: left;
+        white-space: normal;
+        padding-left: 18px;
     }
-    .menu li a:hover{
-        background:#222;
+    .menu a{
+        font-size: 18px;
+    }
+    .logo{
+        font-size: 24px;
     }
 }
-
 
 </style>
 </head>
@@ -212,7 +250,7 @@ header {
 
     <div class="bloco-logo">
 
-        <img src= "https://i.ibb.co/5W3DzTd3/Whats-App-Image-2026-06-16-at-22-41-53.jpg" "  alt="Logo Jornal GM" class="imagem-logo">
+        <img src="https://i.ibb.co/5W3DzTd3/Whats-App-Image-2026-06-16-at-22-41-53.jpg" alt="Logo Jornal GM" class="imagem-logo">
 
     </div>
 
@@ -232,10 +270,6 @@ header {
 </nav>
 
 </header>
-</header>
-
-
-<main class="container-portal">
 
 <main class="container-portal">
 
